@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woo!</title>
+</head>
+<style>
+    body {
+        background-color: coral;
+    }
+
+    #blue-container {
+        margin: auto;
+        top: 50%;
+        width: 50%;
+        height: 20px;
+        background-color: aquamarine;
+    }
+
+    h1 {
+        cursor: pointer;
+        position: relative;
+        text-align: center;
+        top: 25%;
+    }
+</style>
+
+
+<body>
+    
+    <div id="blue-container" onclick="logThis()"> </div>
+    <h1 onclick="hello()"> Welcome </h1>
+
+</body>
+
+<script>
+    function hello() {
+        alert("Hello there!");
+    }
+
+    function logThis() {
+        console.log("the div was clicked")
+    }
+</script>
+
+</html>
