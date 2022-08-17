@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    body {
+        background-color: black;
+    }
+
+    #BigContainer {
+        background-color: antiquewhite;
+        position: absolute;
+        top: 25%;
+        height: 50%;
+        width: 100%;
+
+    }
+
+    .SmallContainer {
+        background-color: deeppink;
+        position: absolute;
+        top: 25%;
+        height: 50%;
+        width: 50%;
+        left: 25%;
+        margin: auto;
+        transition: all 0.5s;
+    }
+
+    .SmallContainer:hover {
+        background-color: rgb(243, 255, 20);
+    }
+
+    h1 {
+        cursor: cell;
+        position: relative;
+        text-align: center;
+        top: 25%;
+    }
+</style>
+
+
+<body>
+    <div id="BigContainer">
+        <div class="SmallContainer">
+            <h1 onclick="Boom()"> Coder in Training!</h1>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    function Boom() {
+        alert("Hello World!")
+    }
+</script>
+
+
+</html>
