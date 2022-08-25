@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="myResult.js"></script>
+
+
+
+
+<style>
+  table,
+  th,
+  td {
+    border: 0px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+</style>
+
+
+
+
+<body>
+
+  <h2>Home Demolitions as Punishment in Palestine (2004-2022)
+  </h2>
+
+  <table id="mynewtable" style="width:100%">
+    <tr>
+      <th>Date of Demolition</th>
+      <th>District</th>
+      <th>People left Homeless</th>
+    </tr>
+
+  </table>
+
+</body>
+
+<script>
+
+  var x = document.getElementById("mynewtable")
+    for (var i = 0; i < myResult.objects.length; i++) {
+      
+  
+      var myNewRow = document.createElement('tr');
+      var myNewCell1 = document.createElement('td');
+      var myNewCell2 = document.createElement('td');
+      var myNewCell3 = document.createElement('td');
+  
+      myNewCell1.innerText = (myResult.objects[i]["Date of Demolition"]);
+      myNewCell2.innerText = myResult.objects[i].District;
+      myNewCell3.innerText = (myResult.objects[i]["People left Homeless"]);
+  
+      if((myResult.objects[i]["People left Homeless"]) >=5) {myNewCell1.style.backgroundColor = '#f0bbbb'}
+      if((myResult.objects[i]["People left Homeless"]) >=5) {myNewCell2.style.backgroundColor = '#f0bbbb'}
+      if((myResult.objects[i]["People left Homeless"]) >=5) {myNewCell3.style.backgroundColor = '#f0bbbb'}
+
+      if((myResult.objects[i]["People left Homeless"]) <5) {myNewCell1.style.backgroundColor = '#bbf0c9'}
+      if((myResult.objects[i]["People left Homeless"]) <5) {myNewCell2.style.backgroundColor = '#bbf0c9'}
+      if((myResult.objects[i]["People left Homeless"]) <5) {myNewCell3.style.backgroundColor = '#bbf0c9'}
+
+      myNewRow.append(myNewCell1)
+      myNewRow.append(myNewCell2)
+      myNewRow.append(myNewCell3)
+  
+      x.append(myNewRow)
+      
+    }
+  
+    //end of loop
+  </script>
+</html>
