@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemolitionsbarPolar</title>
+</head>
+<style>
+    #myDiv {
+        background-color: blue;
+        width: 800px;
+        height: 800px;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.14.0/plotly.min.js"
+    integrity="sha512-XDnqTWsAcVl16AYJoBHumISzIYThowGjR67jeL53NSp6tajsq2qf5UeAWvk1n6Hp3M2iMsV/ewhPScBiLCDs9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</script>
+<script type="text/javascript" src="/GEOG456/myResult.js"></script>
+
+<body>
+    <div id="myDiv">
+    </div>
+
+    <script>
+        var y = myResult.objects.map(e => Number(e["People left Homeless"]))
+        var x = myResult.objects.map(e => (e["Date of Demolition"]))
+
+        var trace1 = {
+            r: y,
+            mode: 'markers',
+            type: 'barpolar',
+            marker: {
+                color: y,
+                colorscale: 'Portland',
+
+            }
+        }
+        var layout = {
+            title: {
+                text: 'Palestinian People left Homeless from Israeli Home Demolitions (2004-2022)'
+            },
+            xaxis: {
+                title: {
+                    text: 'Date of Demolition'
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'People left Homeless'
+                }
+
+            }
+
+        }
+
+        // <var trace2 = {
+        //   x: [2, 3, 4, 5],
+        //   y: [16, 5, 11, 9],
+        //   mode: 'lines',
+        //   type: 'scatter'
+        // };
+
+        // var trace3 = {
+        //   x: [1, 2, 3, 4],
+        //   y: [12, 9, 15, 12],
+        //   mode: 'lines+markers',
+        //   type: 'scatter'
+        // };
+
+        var data = [trace1];
+
+        Plotly.newPlot('myDiv', data,layout);
+    </script>
+    <p> Description: This graph shows the number of Palestinian people left homeless as a result of Israeli home demolitons for the purpose of punishment. Benefits of Graph: Graph can be used to visually represent segments and grouping within the data set. Graph shows density of those affected, visually through color. Limitations: The absence of a timeline is a disadvantage. Additionally, the graph does not include a spatial component. i.e. it does not display locality data which would make for a more comprehensive understanding of trends in Israeli home demolitions as punishment. </p>
+</body>
+
+</html>
