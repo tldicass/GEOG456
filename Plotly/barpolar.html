@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barPolar</title>
+</head>
+<style>
+    #myDiv {
+        background-color:blue;
+        width: 800px;
+        height: 800px;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.14.0/plotly.min.js" integrity="sha512-XDnqTWsAcVl16AYJoBHumISzIYThowGjR67jeL53NSp6tajsq2qf5UeAWvk1n6Hp3M2iMsV/ewhPScBiLCDs9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</script>
+<script src="https://gisunc.github.io/GEOG456FALL2022Data/TMAX/tmax.js"></script>
+
+<body>
+    <div id="myDiv">
+    </div>
+
+    <script>
+var y= chTmax.map(e => Number (e.TMAX))
+var x= chTmax.map(e=> e.DATE)
+
+var trace1 = {
+  r: y,
+  mode: 'markers',
+  type: 'barpolar',
+  marker: {color:y, colorscale:'Portland',
+}
+}
+
+// <var trace2 = {
+//   x: [2, 3, 4, 5],
+//   y: [16, 5, 11, 9],
+//   mode: 'lines',
+//   type: 'scatter'
+// };
+
+// var trace3 = {
+//   x: [1, 2, 3, 4],
+//   y: [12, 9, 15, 12],
+//   mode: 'lines+markers',
+//   type: 'scatter'
+// };
+
+var data = [trace1];
+
+Plotly.newPlot('myDiv', data);
+
+    </script>
+</body>
+</html>
