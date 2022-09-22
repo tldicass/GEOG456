@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestine Map 2</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+    <script src="demos.js"> </script>
+</head>
+<style>
+    #map {
+        width: 100%;
+        height: 500px;
+    }
+</style>
+
+<body>
+</br>
+    <h3 id="daYear">Date of Demolition</h3>
+    <input type="range" name="year" min=0 max=251 oninput="moveSlider(this.value)">
+
+    <button onclick='geojson.setStyle({color:getRandomColor()})'> Click Me! </button>
+    <div id="map"></div>
+
+    <script>
+        for (var i = 0; i < demos.features.length; i++) {
+ DoD = demos.features[i].properties['Date of Demolition']
+ DoDtoNum = Date.parse(DoD);
+}
+        var map = L.map('map').setView([34.998,32.0727], 5);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+    function myStyle(features) {
+        // console.log(feature.properties.PeopleleftHomeless)
+        // console.log(feature.properties['Date of Demolition'])
+        return {
+    "color": getColor(features.properties['Date of Demolition']),
+    "weight": .15,
+    "opacity": 0.65
+}
+};
+
+function getColor(d) {
+    return
+    d < MyCurrentSelection ? "red" : 
+                 "green";
+                 console.log(d)
+}
+
+    var geojson = L.geoJSON(demos,{style:myStyle}).addTo(map);
+
+    function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+
+var myCurrentSelction = 0;
+function moveSlider(value) {
+(console.log(value))
+document.getElementById('daYear').innerHTML = 'Date of Demolition: '+ demos.features[value].properties['Date of Demolition']
+myCurrentSelction = value 
+geojson.resetStyle()
+// console.log(myCurrentSelection)
+}
+
+moveSlider(myCurrentSelction)
+
+    </script>
+</body>
+</html>
