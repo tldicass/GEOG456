@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>October</title>
+</head>
+<style>
+    img{
+        position:absolute
+    }
+    .off {
+        visibility: hidden;
+    }
+    .on {
+        visibility: visible;
+    }
+</style>
+<body>
+    <div id='container'>
+    <img id="y2005" class = "off" src="./sa2005.png" alt="">
+    <img id= "y2016" class = "on" src="./sa2016.png" alt="">
+    <!-- <img id="y2022" src="./sa2022.png" alt=""> -->
+    </div>
+    <script>
+        var myContainer = document.getElementById('container')
+        var hidden = 'hidden'
+        myContainer.addEventListener('click', myFunction)
+        function myFunction () {
+            var theOn = document.getElementsByClassName('on')[0]
+            var theOff = document.getElementsByClassName('off')[0]
+            theOn.className = 'off'
+            theOff.className = 'on'
+        }
+    </script>
+
+</body>
+</html>

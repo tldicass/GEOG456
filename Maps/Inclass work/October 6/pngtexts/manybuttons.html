@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManyButtons</title>
+</head>
+<style>
+    img {
+        position:absolute;
+        width: 700px;
+    }
+    button{
+        position:absolute;
+        top: 410px;
+    }
+</style>
+<body>
+    <img id='after' src="./sa2022.png" alt="">
+    <img id='another' src="./sa2016.png" alt="">
+    <img id='before' src="./sa2005.png" alt="">
+    <button style="left:10px" onclick="myFunction('after')">after</button>
+    <button style="left:100px" onclick="myFunction('another')">another</button>
+    <button style="left:200px" onclick="myFunction('before')">before</button>
+</body>
+<script>
+    function myFunction(id){
+        var imgs=document.getElementsByTagName('img')
+        for(var i=0;i < imgs.length; i++){imgs[i].style.visibility='hidden'}
+        var daImg=document.getElementById(id)
+        daImg.style.visibility='visible'
+        console.log(daImg) 
+    }
+</script>
+</html>
