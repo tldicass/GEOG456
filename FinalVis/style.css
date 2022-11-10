@@ -1,0 +1,52 @@
+@import url(//fonts.googleapis.com/css?family=Lato:400);
+
+body {
+  font-family:Lato,Tahoma;
+  color:#e7e7e7;
+  font-size:1em;
+  background-color:#222;
+}
+
+.description {
+  color:#aaa;
+  font-size:0.8em;
+}
+
+a:visited, a:active, a {
+  color:#aaa;
+  text-decoration:underline;
+}
+
+a:hover {
+  color:#FFF;
+  text-decoration:underline;
+}
+
+.btn {
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border:0;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 15px;
+  background: #3d5296;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #4462c6;
+  text-decoration: none;
+}
+
+.amcharts-map-image {
+  transform-origin: 90px 90px;
+  transition: all 100ms;
+  clip-path: circle(50%);
+  outline: solid 2px;
+  border-radius:50%;
+}
+
+.amcharts-map-image:hover {
+transform: scale(1.5) ;
+}
